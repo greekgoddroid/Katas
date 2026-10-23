@@ -15,4 +15,14 @@ describe('FizzBuzz Game', () => {
     expect(result).toEqual("Fizz");
   });
 
+  test('should works 4', () => {
+    const result = game(4);
+    expect(result).toEqual(4);
+  });
+
+  test('should return Buzz for 5', () => {
+    const result = game(5);
+    expect(result).toEqual("Buzz");
+  });
+
 });
