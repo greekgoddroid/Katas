@@ -26,7 +26,37 @@ Add the following new rule, if a number is prime return Whizz. Only worry about 
   4      4
   5      BuzzWhizz
  */
+
+const esPrimo = (numero: number): boolean => {
+  if (numero < 2) {
+    return false;
+  }
+
+  for (let divisor = 2; divisor < numero; divisor++) {
+    if (numero % divisor === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
 export const game = (input: number): number | string => {
+  if (input % 15 === 0){
+    return "FizzBuzz";
+  }
+  
+  if (esPrimo(input)) {
+    if (input % 3 === 0) {
+      return "FizzWhizz";
+    }
+
+    if (input % 5 === 0) {
+      return "BuzzWhizz";
+    }
+
+    return "Whizz";
+  }
+
   if (input % 3 === 0){
     return "Fizz";
   }
@@ -34,7 +64,7 @@ export const game = (input: number): number | string => {
   if (input % 5 === 0){
     return "Buzz";
   }
-  
+
   return input;
 }
 
