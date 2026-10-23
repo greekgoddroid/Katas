@@ -76,4 +76,38 @@ describe('FizzBuzz Game', () => {
     expect(result).toEqual("Buzz");
   });
 
+  test('should return Whizz for 101', () => {
+    const result = game(101);
+    expect(result).toEqual("Whizz");
+  });
+
+  test('should return 121 for number 121', () => {
+    const result = game(121);
+    expect(result).toEqual(121);
+  });
+
+  test('should return FizzBuzz for 105', () => {
+    const result = game(105);
+    expect(result).toEqual("FizzBuzz");
+  });
+
+  test('should return Whizz for 997', () => {
+    const result = game(997);
+    expect(result).toEqual("Whizz");
+  });
+
+  test('should return Fizz for 999', () => {
+    const result = game(999);
+    expect(result).toEqual("Fizz");
+  });
+
+  test('should return 49 for number 49', () => {
+    const result = game(49);
+    expect(result).toEqual(49);
+  });
+
+  test('should reject zero', () => {
+   expect(() => game(0)).toThrow("Input must be a positive integer");
+  });
+
 });

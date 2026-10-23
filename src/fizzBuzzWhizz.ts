@@ -32,8 +32,7 @@ const esPrimo = (numero: number): boolean => {
     return false;
   }
 
-  for (let divisor = 2; divisor < numero; divisor++) {
-    if (numero % divisor === 0) {
+  for (let divisor = 2; divisor * divisor <= numero; divisor++) {    if (numero % divisor === 0) {
       return false;
     }
   }
@@ -41,6 +40,11 @@ const esPrimo = (numero: number): boolean => {
   return true;
 };
 export const game = (input: number): number | string => {
+  
+  if (!Number.isSafeInteger(input) || input <= 0) {
+    throw new Error("Input must be a positive integer");
+  }
+
   if (input % 15 === 0){
     return "FizzBuzz";
   }
